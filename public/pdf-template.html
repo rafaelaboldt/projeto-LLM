@@ -2,120 +2,170 @@
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
+      :root {
+        --primary-color: #4F8EF7;
+        --secondary-color: #58C27D;
+        --accent-color: #F6C445;
+        --coral-color: #F26B6B;
+        --bg-color: #FFFDF7;
+        --surface-color: #FFFFFF;
+        
+        --text-main: #2c3e50;
+        --text-muted: #5e6d7c;
+        --border-color: #e2e8f0;
+        --input-bg: #f8fafc;
+        
+        --radius-md: 10px;
+        --radius-lg: 16px;
+        --radius-xl: 24px;
+        
+        --font-family: 'Nunito', sans-serif;
+      }
+
       @page {
         size: A4;
-        margin: 2cm;
+        margin: 2.5cm;
       }
 
       body {
-        font-family: Arial, Helvetica, sans-serif;
-        color: #333;
-        font-size: 14px;
-        line-height: 1.6;
+        margin: 0;
+        padding: 0;
+        font-family: var(--font-family);
+        color: var(--text-main);
+        background-color: var(--surface-color);
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
       }
 
-      h1 {
-        color: #1e3a8a;
-        font-size: 28px;
-        border-bottom: 2px solid #ddd;
-        padding-bottom: 10px;
-        margin-top: 0;
+      .page-content {
+        padding: 0; /* Padding is now handled by @page margin */
+      }
 
+      .atividade {
+        font-size: 1.25rem;
+        line-height: 1.8;
+        color: #1a202c;
+      }
+
+      .atividade h1 {
+        color: var(--primary-color);
+        font-size: 2.2rem;
+        font-weight: 800;
+        margin-top: 1rem;
+        margin-bottom: 1.5rem;
+        text-align: center;
+        border-bottom: 3px double #e1e9fb;
+        padding-bottom: 1rem;
         page-break-after: avoid;
         break-after: avoid;
       }
 
-      h2 {
-        color: #2563eb;
-        margin-top: 28px;
-        margin-bottom: 12px;
-
+      .atividade h2 {
+        color: var(--secondary-color);
+        font-size: 1.6rem;
+        font-weight: 800;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
         page-break-after: avoid;
         break-after: avoid;
       }
 
-      h3,
-      h4,
-      h5,
-      h6 {
+      .atividade h3 {
+        color: var(--text-main);
+        font-size: 1.3rem;
+        font-weight: 700;
+        margin-top: 1.5rem;
+        margin-bottom: 0.5rem;
         page-break-after: avoid;
         break-after: avoid;
       }
 
-      p {
-        margin: 10px 0;
+      .atividade p {
+        margin-bottom: 1.25rem;
         text-align: justify;
+        orphans: 3;
+        widows: 3;
       }
 
-      ul,
-      ol {
-        margin: 10px 0 20px 24px;
-
-        page-break-inside: avoid;
-        break-inside: avoid;
+      .atividade ul,
+      .atividade ol {
+        margin-left: 2rem;
+        margin-bottom: 1.5rem;
+        orphans: 3;
+        widows: 3;
       }
 
-      li {
-        margin-bottom: 6px;
+      .atividade li {
+        margin-bottom: 0.5rem;
+        padding-left: 0.5rem;
       }
 
-      table {
-        width: 100%;
-        border-collapse: collapse;
-        margin: 20px 0;
-
-        page-break-inside: avoid;
-        break-inside: avoid;
-      }
-
-      thead {
-        display: table-header-group;
-      }
-
-      tr {
-        page-break-inside: avoid;
-        break-inside: avoid;
-      }
-
-      table,
-      th,
-      td {
-        border: 1px solid #bbb;
-      }
-
-      th {
-        background: #f3f4f6;
+      .atividade li::marker {
+        color: var(--primary-color);
         font-weight: bold;
       }
 
-      th,
-      td {
-        padding: 8px;
-        vertical-align: top;
+      .atividade strong {
+        font-weight: 800;
+        color: #0f172a;
+        background-color: rgba(246, 196, 69, 0.2);
+        padding: 0 0.2rem;
+        border-radius: 4px;
       }
 
-      pre {
-        white-space: pre-wrap;
-        word-wrap: break-word;
-        font-family: inherit;
+      .atividade table {
+        width: 100%;
+        border-collapse: separate;
+        border-spacing: 0;
+        margin: 2rem 0;
+        background-color: #fff;
+        border-radius: var(--radius-md);
+        overflow: hidden;
+        border: 2px solid #e1e9fb;
+        page-break-inside: avoid;
+        break-inside: avoid;
       }
 
-      hr {
-        border: none;
-        border-top: 1px solid #ccc;
-        margin: 30px 0;
+      .atividade th,
+      .atividade td {
+        padding: 1rem;
+        text-align: left;
       }
 
-      blockquote {
-        margin-left: 20px;
-        padding-left: 15px;
-        border-left: 4px solid #ccc;
+      .atividade th {
+        background-color: #f1f5fe;
+        font-weight: 800;
+        color: var(--primary-color);
+        border-bottom: 2px solid #e1e9fb;
       }
 
-      img {
-        max-width: 100%;
+      .atividade td {
+        border-bottom: 1px solid var(--border-color);
+      }
+
+      .atividade tr:last-child td {
+        border-bottom: none;
+      }
+
+      .atividade tr:nth-child(even) td {
+        background-color: #fafbfc;
+      }
+
+      .atividade pre {
+        background-color: #f1f5f9;
+        color: #334155;
+        padding: 1.5rem;
+        border-radius: var(--radius-md);
+        border-left: 4px solid var(--accent-color);
+        overflow-x: auto;
+        margin: 1.5rem 0;
+        font-family: monospace;
+        page-break-inside: avoid;
+        break-inside: avoid;
       }
 
       .footer {
@@ -125,19 +175,11 @@
         font-size: 11px;
       }
 
-
       h1 + p,
       h2 + p,
       h3 + p {
         page-break-before: avoid;
-      }
-
-      p,
-      table,
-      ul,
-      ol {
-        orphans: 3;
-        widows: 3;
+        break-before: avoid;
       }
 
       section {
@@ -148,10 +190,14 @@
   </head>
 
   <body>
-    <div id="conteudo"></div>
-
-    <div class="footer">
-      Gerado por AtivAI
+    <div class="page-content">
+      <div class="atividade">
+        <div id="conteudo"></div>
+      </div>
+      
+      <div class="footer">
+        Gerado por AtivAI
+      </div>
     </div>
   </body>
 </html>
