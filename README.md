@@ -78,7 +78,8 @@ Certifique-se de ter instalado em sua máquina:
 ### 1. Clonar o repositório
 ```bash
 git clone https://github.com/rafaelaboldt/ativai.git
-cd projeto-LLM
+
+cd ativai
 ```
 
 ### 2. Instalar as dependências do projeto
